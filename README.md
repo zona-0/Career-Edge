@@ -1,15 +1,11 @@
 # Career-Edge
 AI-Assistance
 
-/*
-Project: Resume and Cover Letter Generator
+🤖✨ AI Resume & Cover Letter Builder
 
-This Go-based application leverages AI to streamline the job application process by
-automatically generating professional resumes and cover letters tailored to the user's
-profile and job preferences. Designed for simplicity and efficiency, it features
-interactive command-line prompts that guide users step-by-step in creating polished
-documents ready for submission.
+Say goodbye to writer’s block! This smart Go-powered CLI tool uses AI magic to help you craft
+professional resumes and cover letters in minutes — personalized to highlight your unique skills
+and experiences.
 
-Ideal for job seekers who want to save time and make a strong impression with
-professionally crafted application materials.
-*/
+Whether you're a fresh graduate or a seasoned pro, this tool makes job hunting smoother, faster,
+and way more impressive. Get ready to land your dream job with ease! 🚀
