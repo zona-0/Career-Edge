@@ -8,28 +8,36 @@ import (
 func main() {
 	var menu int
 
-	fmt.Println("===============================================================")
-	fmt.Println(">>> Initializing Systems...")
-	fmt.Println(">>> Loading modules: Resume Engine, CoverLetter Generator...")
-	fmt.Println(">>> Welcome to your personal career assistant")
-	fmt.Println("===============================================================")
-	fmt.Println("[!!!] NOTICE:")
-	fmt.Println(">>> This system is a specialized assistant designed only to help you build")
-	fmt.Println(">>> Smart resumes and job specific cover letters")
-	fmt.Println(">>> This AI is NOT a general chatbot and does not support open conversation")
-	fmt.Println(">>> Please use the menu options to build your career profile effectively")
-	fmt.Println("===============================================================")
+	fmt.Println("╔═══════════════════════════════════════════════════════════════╗")
+	fmt.Println("║                     SYSTEM INITIALIZATION                     ║")
+	fmt.Println("╠═══════════════════════════════════════════════════════════════╣")
+	fmt.Println("║ >> Initializing Systems...                                    ║")
+	fmt.Println("║ >> Loading modules: Resume Engine, CoverLetter Generator...   ║")
+	fmt.Println("║ >> Welcome to your personal career assistant                  ║")
+	fmt.Println("╚═══════════════════════════════════════════════════════════════╝")
 	fmt.Println()
+
+	fmt.Println("╔══════════════════════════════════════════════════════════════════╗")
+	fmt.Println("║                            NOTICE                                ║")
+	fmt.Println("╠══════════════════════════════════════════════════════════════════╣")
+	fmt.Println("║ This system is a specialized assistant designed ONLY to help     ║")
+	fmt.Println("║ you build smart resumes and job-specific cover letters           ║")
+	fmt.Println("║                                                                  ║")
+	fmt.Println("║ [X] This is NOT a general chatbot                                ║")
+	fmt.Println("║ [V] Use the menu options to interact effectively                 ║")
+	fmt.Println("╚══════════════════════════════════════════════════════════════════╝")
+	fmt.Println()
+
 
 	for {
 		fmt.Println("╔═══════════════════════════════════════════════════════════════╗")
 		fmt.Println("║                     C A R E E R  E D G E                      ║")
 		fmt.Println("║     AI Assistant for Smart Resumes & Cover Letter Creation    ║")
 		fmt.Println("╠═══════════════════════════════════════════════════════════════╣")
-		fmt.Println("║ [1] Tambah Skill                      | Add Skill             ║")
-		fmt.Println("║ [2] Tambah Pengalaman                 | Add Experience        ║")
-		fmt.Println("║ [3] Tambah Pendidikan                 | Add Education         ║")
-		// fmt.Println("║ [4] Evaluasi Resume <AI Assistance>   | Evaluate Resume       ║")
+		fmt.Println("║ [1] Add Skill                         | Tambah Skill          ║")
+		fmt.Println("║ [2] Add Experience                    | Tambah Pengalaman     ║")
+		fmt.Println("║ [3] Add Education                     | Tambah Pendidikan     ║")
+		fmt.Println("║ [4] Evaluasi Resume <AI Assistance>   | Evaluate Resume       ║")
 		// fmt.Println("║ [5] Tampilkan Data Pengguna           | Show User Data        ║")
 		// fmt.Println("║ [6] Buat Surat Lamaran Otomatis       | Generate Cover Letter ║")
 		// fmt.Println("║ [7] Tambah Lowongan Pekerjaan         | Add Job Listing       ║")
@@ -38,7 +46,7 @@ func main() {
 		// fmt.Println("║ [10] Urutkan Kata Kunci <Insertion>   | Sort by Keyword       ║")
 		fmt.Println("║ [0] Keluar                            | Exit                  ║")
 		fmt.Println("╚═══════════════════════════════════════════════════════════════╝")
-		fmt.Print("[!!!] Pilih menu / Choose option: ")
+		fmt.Print("[!!!] Choose option / Pilih Menu: ")
 		fmt.Scanln(&menu)
 
 		if menu == 1 {
@@ -50,7 +58,10 @@ func main() {
 		} else if menu == 3 {
 			modules.AddEducation()
 			modules.BackToMenu()
-		} else if menu == 0 {
+		} else if menu == 4{
+			modules.RecommendJob()
+			modules.BackToMenu()	
+		}else if menu == 0 {
 			fmt.Println("Ty")
 			break
 		}

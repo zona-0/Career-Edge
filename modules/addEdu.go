@@ -5,16 +5,27 @@ import (
 	"CAREER-EDGE/data"
 )
 
-func AddEducation(){
+func AddEducation() {
 	var newEducation data.Education
 	var school, degree string
 	var year int
 
-	fmt.Printf("[>>] Input School/University\n(Telkom University): ")
+	fmt.Println("╔══════════════════════════════════════════════════════════════╗")
+	fmt.Println("║                  [Education Input - AI Assistant]           ║")
+	fmt.Println("╠══════════════════════════════════════════════════════════════╣")
+	fmt.Println("║ Please enter your education details below.                   ║")
+	fmt.Println("║ Use underscore (_) instead of spaces. Example:               ║")
+	fmt.Println("║  - School/University: Telkom_University                      ║")
+	fmt.Println("║  - Degree/Major: S1_Computer_Engineering                      ║")
+	fmt.Println("╚══════════════════════════════════════════════════════════════╝")
+
+	fmt.Print("[>>] Input School/University\n>>> ")
 	fmt.Scanln(&school)
-	fmt.Printf("[>>] Degree/Major\n(S1 Computer Engineering): ")
+
+	fmt.Print("[>>] Degree/Major\n>>> ")
 	fmt.Scanln(&degree)
-	fmt.Printf("[>>] Year of graduation: ")
+
+	fmt.Print("[>>] Year of graduation (Example: 2024)\n>>> ")
 	fmt.Scanln(&year)
 
 	newEducation.School = school
@@ -22,7 +33,9 @@ func AddEducation(){
 	newEducation.Year = year
 
 	data.Educations[data.EducationCount] = newEducation
-	data.EducationCount++
+	data.EducationCount = data.EducationCount + 1
 
-	fmt.Println("[!!] Education added successfully")
+	fmt.Println("╔══════════════════════════════════════════════════════════════╗")
+	fmt.Println("║                [!!] Education added successfully            ║")
+	fmt.Println("╚══════════════════════════════════════════════════════════════╝")
 }
