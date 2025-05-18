@@ -18,15 +18,20 @@ func ToLower(s string) string {
 	return string(b)
 }
 
-func EqualsIgnoreCase(a, b string) bool {
-	if len(a) != len(b) {
-		return false
+func Capitalize(input string) string {
+	if len(input) == 0 {
+		return input
 	}
-
-	for i = 0; i < len(a); i += 1 {
-		if toLowerChar(a[i]) != toLowerChar(b[i]) {
-			return false
-		}
+	var result string = ""
+	var ch byte = input[0]
+	if ch >= 'a' && ch <= 'z' {
+		ch = ch - 32
 	}
-	return true
+	result = string(ch)
+	var i int = 1
+	for i < len(input) {
+		result = result + string(input[i])
+		i = i + 1
+	}
+	return result
 }
