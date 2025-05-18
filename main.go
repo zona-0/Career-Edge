@@ -9,7 +9,7 @@ func main() {
 	var menu int
 
 	fmt.Println("╔═══════════════════════════════════════════════════════════════╗")
-	fmt.Println("║                     SYSTEM INITIALIZATION                     ║")
+	fmt.Println("║                 <>   SYSTEM INITIALIZATION    <>              ║")
 	fmt.Println("╠═══════════════════════════════════════════════════════════════╣")
 	fmt.Println("║ >> Initializing Systems...                                    ║")
 	fmt.Println("║ >> Loading modules: Resume Engine, CoverLetter Generator...   ║")
@@ -18,7 +18,7 @@ func main() {
 	fmt.Println()
 
 	fmt.Println("╔══════════════════════════════════════════════════════════════════╗")
-	fmt.Println("║                            NOTICE                                ║")
+	fmt.Println("║                      [!!]    NOTICE    [!!]                      ║")
 	fmt.Println("╠══════════════════════════════════════════════════════════════════╣")
 	fmt.Println("║ This system is a specialized assistant designed ONLY to help     ║")
 	fmt.Println("║ you build smart resumes and job-specific cover letters           ║")
@@ -34,10 +34,10 @@ func main() {
 		fmt.Println("║                     C A R E E R  E D G E                      ║")
 		fmt.Println("║     AI Assistant for Smart Resumes & Cover Letter Creation    ║")
 		fmt.Println("╠═══════════════════════════════════════════════════════════════╣")
-		fmt.Println("║ [1] Add Skill                         | Tambah Skill          ║")
-		fmt.Println("║ [2] Add Experience                    | Tambah Pengalaman     ║")
-		fmt.Println("║ [3] Add Education                     | Tambah Pendidikan     ║")
-		fmt.Println("║ [4] Evaluasi Resume <AI Assistance>   | Evaluate Resume       ║")
+		fmt.Println("║ [1] Add Skill                         | Tambah Skill          ║") // Need to rev: add, change, delete
+		fmt.Println("║ [2] Add Experience                    | Tambah Pengalaman     ║") // Need to rev: add, change, delete
+		fmt.Println("║ [3] Add Education                     | Tambah Pendidikan     ║") // Need to rev: add, change, delete
+		fmt.Println("║ [4] Job Recommendation <AI Assistance>| Rekomendasi Pekerjaan ║")
 		// fmt.Println("║ [5] Tampilkan Data Pengguna           | Show User Data        ║")
 		// fmt.Println("║ [6] Buat Surat Lamaran Otomatis       | Generate Cover Letter ║")
 		// fmt.Println("║ [7] Tambah Lowongan Pekerjaan         | Add Job Listing       ║")

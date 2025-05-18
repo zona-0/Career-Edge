@@ -6,7 +6,7 @@ import (
 )
 
 func AddExperience() {
-	var title, company, desc string
+	var title, company string
 	var newExperience data.Experience
 
 	fmt.Println("╔════════════════════════════════════════════════════════════════════╗")
@@ -33,12 +33,12 @@ func AddExperience() {
 	fmt.Println("║     - Local_High_School                                            ║")
 	fmt.Println("║     - Marketing_Firm                                               ║")
 	fmt.Println("║                                                                    ║")
-	fmt.Println("║ [>>] Examples of Description (brief):                              ║")
-	fmt.Println("║     - Backend_Engineer_with_5_years_experience                     ║")
-	fmt.Println("║     - Digital_Marketing_and_Social_Media_Manager                   ║")
-	fmt.Println("║     - Created_graphic_designs_for_clients                          ║")
-	fmt.Println("║     - Teaching_English_to_high_school_students                     ║")
-	fmt.Println("║     - Managed_sales_team_and_exceeded_targets                      ║")
+	// fmt.Println("║ [>>] Examples of Description (brief):                              ║")
+	// fmt.Println("║     - Backend_Engineer_with_5_years_experience                     ║")
+	// fmt.Println("║     - Digital_Marketing_and_Social_Media_Manager                   ║")
+	// fmt.Println("║     - Created_graphic_designs_for_clients                          ║")
+	// fmt.Println("║     - Teaching_English_to_high_school_students                     ║")
+	// fmt.Println("║     - Managed_sales_team_and_exceeded_targets                      ║")
 	fmt.Println("╚════════════════════════════════════════════════════════════════════╝")
 
 	fmt.Print("[>>] Job Title: ")
@@ -49,18 +49,18 @@ func AddExperience() {
 	fmt.Scan(&company)
 	company = ToLower(company)
 
-	fmt.Print("[>>] Description (brief): ")
-	fmt.Scan(&desc)
-	desc = ToLower(desc)
+	// fmt.Print("[>>] Description (brief): ")
+	// fmt.Scan(&desc)
+	// desc = ToLower(desc)
 
 	newExperience.Title = title
 	newExperience.Company = company
-	newExperience.Description = desc
+	// newExperience.Description = desc
 
 	data.Experiences[data.ExperienceCount] = newExperience
-	data.ExperienceCount = data.ExperienceCount + 1
+	data.ExperienceCount += 1
 
 	fmt.Println("╔════════════════════════════════════════════════════════════════════╗")
-	fmt.Println("║                    [!!] Experience added successfully               ║")
+	fmt.Println("║                    [!!] Experience added successfully              ║")
 	fmt.Println("╚════════════════════════════════════════════════════════════════════╝")
 }
