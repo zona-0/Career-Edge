@@ -1,5 +1,4 @@
 package modules
-
 import (
 	"fmt"
 	"CAREER-EDGE/data"
@@ -46,8 +45,8 @@ func ManageEducation() {
 				data.EducationCount += 1
 
 				fmt.Println("[V] Pendidikan berhasil ditambahkan")
+				Clear()
 			}
-
 		} else if command == 2 {
 			if data.EducationCount == 0 {
 				fmt.Println("[!] Belum ada data pendidikan untuk diubah")
@@ -82,9 +81,9 @@ func ManageEducation() {
 					data.Educations[index-1].Year = year
 
 					fmt.Println("[V] Data pendidikan berhasil diubah")
+					Clear()
 				}
 			}
-
 		} else if command == 3 {
 			if data.EducationCount == 0 {
 				fmt.Println("[!] Belum ada data pendidikan yang dimasukkan")
@@ -124,12 +123,12 @@ func ManageEducation() {
 					data.EducationCount -= 1
 					fmt.Println("[V] Data pendidikan berhasil dihapus")
 				}
+				Clear()
 			}
-
 		} else if command == 5 {
 			fmt.Println("[V] Sesi input pendidikan selesai")
 			running = false
-
+			
 		} else {
 			fmt.Println("[!] Pilihan tidak dikenali. Masukkan angka <1 - 5>")
 		}

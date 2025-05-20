@@ -64,7 +64,7 @@ func main() {
 			modules.BackToMenu()	
 		} else if menu == 5{
 			modules.RecommendJob()
-			modules.BackToMenu()	
+			modules.BackToMenu()
 		} else if menu == 6{
 			modules.CreateResume()
 			modules.BackToMenu()	

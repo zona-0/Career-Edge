@@ -43,6 +43,7 @@ func ManageExperience() {
 				data.ExperienceCount += 1
 
 				fmt.Println("[V] Pengalaman berhasil ditambahkan")
+				Clear()
 			}
 		} else if command == 2 {
 			if data.ExperienceCount == 0 {
@@ -76,6 +77,7 @@ func ManageExperience() {
 					data.Experiences[index-1].Company = company
 					fmt.Println("[V] Pengalaman berhasil diubah")
 				}
+				Clear()
 			}
 		} else if command == 3 {
 			if data.ExperienceCount == 0 {
@@ -118,6 +120,7 @@ func ManageExperience() {
 					data.ExperienceCount -= 1
 					fmt.Println("[V] Pengalaman berhasil dihapus")
 				}
+				Clear()
 			}
 		} else if command == 5 {
 			fmt.Println("[V] Sesi input pengalaman selesai")

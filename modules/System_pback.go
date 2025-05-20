@@ -12,4 +12,5 @@ func BackToMenu() {
 			fmt.Println()
 		}
 	}
+	Clear()
 }

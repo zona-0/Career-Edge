@@ -47,6 +47,7 @@ func AddSkill() {
 					}
 				}
 				fmt.Println("[V] Skill berhasil ditambahkan")
+				Clear()
 			}
 		} else if command == 2 {
 			if data.SkillCount == 0 {
@@ -75,6 +76,7 @@ func AddSkill() {
 					nameSkill = ToLower(nameSkill)
 					data.Skills[index-1].Name = nameSkill
 					fmt.Println("[V] Skill berhasil diubah")
+					Clear()
 				}
 			}
 		} else if command == 3 {
@@ -120,6 +122,7 @@ func AddSkill() {
 					data.SkillCount = data.SkillCount - 1
 					fmt.Println("[V] Skill berhasil dihapus")
 				}
+				Clear()
 			}
 		} else if command == 5 {
 			fmt.Println("[V] Sesi input skill selesai")
