@@ -30,22 +30,23 @@ func main() {
 
 
 	for {
-		fmt.Println("╔═══════════════════════════════════════════════════════════════╗")
-		fmt.Println("║                     C A R E E R  E D G E                      ║")
-		fmt.Println("║     AI Assistant for Smart Resumes & Cover Letter Creation    ║")
-		fmt.Println("╠═══════════════════════════════════════════════════════════════╣")
-		fmt.Println("║ [1] Manage Skills                       | Kelola Skill        ║")
-		fmt.Println("║ [2] Manage Experience                   | Kelola Pengalaman   ║")
-		fmt.Println("║ [3] Manage Education                    | Kelola Pendidikan   ║")
-		fmt.Println("║ [4] Job Recommendation <AI Assistance>  | Rekomendasi Pekerjaan ║")
-		// fmt.Println("║ [5] Tampilkan Data Pengguna             | Show User Data      ║")
-		// fmt.Println("║ [6] Buat Surat Lamaran Otomatis         | Generate Cover Letter ║")
+		fmt.Println("╔════════════════════════════════════════════════════════════════════════╗")
+		fmt.Println("║                     C A R E E R  E D G E                               ║")
+		fmt.Println("║     AI Assistant for Smart Resumes & Cover Letter Creation             ║")
+		fmt.Println("╠════════════════════════════════════════════════════════════════════════╣")
+		fmt.Println("║ [1] Manage Skills                       | Kelola Skill                 ║")
+		fmt.Println("║ [2] Manage Experience                   | Kelola Pengalaman            ║")
+		fmt.Println("║ [3] Manage Education                    | Kelola Pendidikan            ║")
+		fmt.Println("║ [4] Show User Data                      | Tampilkan Data Pengguna      ║")
+		fmt.Println("║ [5] Job Recommendation <AI Assistance>  | Rekomendasi Pekerjaan        ║")
+		fmt.Println("║ [6] Generate Cover Letter               | Buat Surat Lamaran Otomatis  ║")
 		// fmt.Println("║ [7] Tambah Lowongan Pekerjaan           | Add Job Listing     ║")
 		// fmt.Println("║ [8] Cari Lowongan Pekerjaan             | Search Job Listing  ║")
 		// fmt.Println("║ [9] Urutkan Gaji <Selection Sort>       | Sort by Salary      ║")
 		// fmt.Println("║ [10] Urutkan Kata Kunci <Insertion>     | Sort by Keyword     ║")
-		fmt.Println("║ [0] Exit                                 | Keluar              ║")
-		fmt.Println("╚═══════════════════════════════════════════════════════════════╝")
+		fmt.Println("║ [0] Help                                | Bantuan                      ║")
+		fmt.Println("║ [0] Exit                                | Keluar                       ║")
+		fmt.Println("╚════════════════════════════════════════════════════════════════════════╝")
 		fmt.Print("[!!!] Choose option / Pilih Menu: ")
 		fmt.Scanln(&menu)
 
@@ -59,9 +60,15 @@ func main() {
 			modules.ManageEducation()
 			modules.BackToMenu()
 		} else if menu == 4{
+			modules.ShowAllUserData()
+			modules.BackToMenu()	
+		} else if menu == 5{
 			modules.RecommendJob()
 			modules.BackToMenu()	
-		}else if menu == 0 {
+		} else if menu == 6{
+			modules.CreateResume()
+			modules.BackToMenu()	
+		} else if menu == 0 {
 			fmt.Println("Ty")
 			break
 		}
