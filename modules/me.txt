@@ -1,0 +1,7 @@
+TO DO LIST:
+    1. UPDATE UI JOB LISTING
+    2. ADD CLEAR MENU (FUNC JOBLIST)
+    3. Selection Sort
+    4. Insertion Sort
+    5. Letter Confirmation
+    6. Validation on multiple func
