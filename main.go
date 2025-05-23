@@ -40,7 +40,7 @@ func main() {
 		fmt.Println("║ [4] Show User Data                      | Tampilkan Data Pengguna      ║")
 		fmt.Println("║ [5] Job Recommendation <AI Assistance>  | Rekomendasi Pekerjaan        ║")
 		fmt.Println("║ [6] Generate Cover Letter               | Buat Surat Lamaran Otomatis  ║")
-		// fmt.Println("║ [7] Tambah Lowongan Pekerjaan           | Add Job Listing     ║")
+		fmt.Println("║ [7] Fitur menambah kerja, gaji, kode                                   ║")
 		// fmt.Println("║ [8] Cari Lowongan Pekerjaan             | Search Job Listing  ║")
 		// fmt.Println("║ [9] Urutkan Gaji <Selection Sort>       | Sort by Salary      ║")
 		// fmt.Println("║ [10] Urutkan Kata Kunci <Insertion>     | Sort by Keyword     ║")
@@ -68,7 +68,10 @@ func main() {
 		} else if menu == 6{
 			modules.CreateResume()
 			modules.BackToMenu()	
-		} else if menu == 0 {
+		} else if menu == 7{
+			modules.ManageJob()
+			modules.BackToMenu()	
+		}else if menu == 0 {
 			fmt.Println("Ty")
 			break
 		}

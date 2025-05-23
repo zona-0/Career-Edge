@@ -14,16 +14,16 @@ func ShowAllUserData() {
 	fmt.Println("╚════════════════════════════════════════════════════════════════════╝")
 
 	// TODO: Show skill data
-	fmt.Println("╔════════════════════════════════════════╗")
-	fmt.Println("║              [ SKILL USER ]            ║")
-	fmt.Println("╠════════════════════════════════════════╣")
+	fmt.Println("╔════════════════════════════════════════════════════════════════════╗")
+	fmt.Println("║              			 [ SKILL USER ]                           ║")
+	fmt.Println("╠════════════════════════════════════════════════════════════════════╣")
 	if data.SkillCount == 0 {
 		fmt.Println("║      [!] Belum ada data skill          ║")
 	} else {
 		i = 0
 		for i < data.SkillCount {
 			fmt.Printf("║  %-1d. %-34s ║\n", i+1, data.Skills[i].Name)
-			i = i + 1
+			i += 1
 		}
 	}
 	fmt.Println("╚════════════════════════════════════════╝")
@@ -42,7 +42,7 @@ func ShowAllUserData() {
 			fmt.Printf("║  %-4d ║ %-22s ║ %-33s ║\n", i+1,
 				data.Experiences[i].Title,
 				data.Experiences[i].Company)
-			i = i + 1
+			i += 1
 		}
 	}
 	fmt.Println("╚════════════════════════════════════════════════════════════════════╝")
@@ -63,7 +63,7 @@ func ShowAllUserData() {
 				edu.School,
 				edu.Degree,
 				edu.Year)
-			i = i + 1
+			i += 1
 		}
 	}
 	fmt.Println("╚════════════════════════════════════════════════════════════════════╝")
