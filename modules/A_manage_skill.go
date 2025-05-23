@@ -32,7 +32,7 @@ func AddSkill() {
 				for data.SkillCount < 10 {
 					fmt.Print("Masukkan nama skill >>> ")
 					fmt.Scan(&nameSkill)
-					nameSkill = ToLower(nameSkill)
+					nameSkill = nameSkill
 
 					if nameSkill == "done" {
 						break
@@ -58,7 +58,7 @@ func AddSkill() {
 				fmt.Println("╠═══════╬════════════════════╣")
 				i = 0
 				for i < data.SkillCount {
-					var skillName string = Capitalize(data.Skills[i].Name)
+					var skillName string = data.Skills[i].Name
 					fmt.Printf("║  %-4d ║ %-18s ║\n", i+1, skillName)
 					i += 1
 				}
@@ -73,7 +73,7 @@ func AddSkill() {
 				} else {
 					fmt.Print("Masukkan skill baru >>> ")
 					fmt.Scan(&nameSkill)
-					nameSkill = ToLower(nameSkill)
+					nameSkill = nameSkill
 					data.Skills[index-1].Name = nameSkill
 					fmt.Println("[V] Skill berhasil diubah")
 					Clear()
@@ -88,7 +88,7 @@ func AddSkill() {
 				fmt.Println("╠═══════╬════════════════════╣")
 				i = 0
 				for i < data.SkillCount {
-					var skillName string = Capitalize(data.Skills[i].Name)
+					var skillName string = data.Skills[i].Name
 					fmt.Printf("║  %-4d ║ %-18s ║\n", i+1, skillName)
 					i += 1
 				}
@@ -103,7 +103,7 @@ func AddSkill() {
 				fmt.Println("╠═══════╬════════════════════╣")
 				i = 0
 				for i < data.SkillCount {
-					var skillName string = Capitalize(data.Skills[i].Name)
+					var skillName string = data.Skills[i].Name
 					fmt.Printf("║  %-4d ║ %-18s ║\n", i+1, skillName)
 					i += 1
 				}

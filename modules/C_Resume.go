@@ -12,7 +12,7 @@ func CreateResume() {
 	fmt.Scan(&user)
 	// Clear()
 	// TODO: AI resume sec
-	if ToLower(user) == "resume"{
+	if user == "resume" || user == "RESUME" || user == "Resume" {
 		fmt.Println(">> Tentu! untuk membuat resume yang efektif, aku butuh informasi dasar terlebih dahulu. Silahkan isi data berikut: ")
 		fmt.Println("[A] Informasi Pribadi: ")
 		fmt.Printf("	[X] Nama: \n	[X] Alamat: \n	[X] No. HP: \n	[X] Email: \n")
@@ -36,7 +36,7 @@ func CreateResume() {
 		} else {
 			i = 0
 			for i < data.SkillCount {
-				fmt.Printf("	[V] %d. %s\n", i+1, Capitalize(data.Skills[i].Name))
+				fmt.Printf("	[V] %d. %s\n", i+1, data.Skills[i].Name)
 				i += 1
 			}
 		}
@@ -49,7 +49,7 @@ func CreateResume() {
 		} else {
 			i = 0
 			for i < data.ExperienceCount {
-				fmt.Printf("	[V] %d. %s %s\n", i+1, Capitalize(data.Experiences[i].Title), Capitalize(data.Experiences[i].Company))
+				fmt.Printf("	[V] %d. %s %s\n", i+1, data.Experiences[i].Title, data.Experiences[i].Company)
 				i += 1
 			}
 		}
@@ -101,37 +101,87 @@ func CreateResume() {
 
 
 		// TODO: RESUME PRINT SECTION
-		Header()
-		fmt.Println(" [A] Informasi Pribadi: ")
-		fmt.Printf("	[V] Nama: %s\n	[V] Alamat: %s\n	[V] No. HP: %s\n	[V] Email: %s\n", nama, alamat, hp, email)
-		fmt.Println(" [B] About Me: ", aboutme)
-		// TODO: TAKE EDUCATION DATA
-		fmt.Println(" [C] Pendidikan: ")
-		fmt.Println("	 [HELP] Jika anda masih melihat pesan ini, maka anda harus mengisi data pada menu aplikasi diawal!")
-		for i = 0; i < data.EducationCount; i++ {
-			fmt.Printf("	 [V] Sekolah/Universitas: %s\n	[V] Jenjang: %s\n	[V] Tahun Lulus: %d\n",
-			data.Educations[i].School, data.Educations[i].Degree, data.Educations[i].Year)
+		fmt.Printf("\n\n")
+		fmt.Println(">> Berikut ini adalah resume yang berhasil saya susun berdasarkan data yang Anda berikan.")
+		fmt.Println(">> Silakan periksa di bawah ini. Jika ada yang ingin direvisi, Anda bisa kembali kapan saja.")
+		fmt.Printf("\n\n")
+		fmt.Println("==================================================================\n")
+		fmt.Printf("Nama: %s\nAlamat: %s\n\nTelp: %s | Email: %s\n", nama, alamat, hp, email)
+
+		fmt.Println("------------------------------------------------------------")
+		fmt.Println("Tentang Saya: ")
+		fmt.Println(aboutme)
+
+
+		fmt.Println("------------------------------------------------------------")
+		fmt.Println("KETERAMPILAN:")
+		if data.SkillCount == 0 {
+			fmt.Println("  [!] Belum ada keterampilan")
+		} else {
+			for i = 0; i < data.SkillCount; i++ {
+				fmt.Printf("  - %s\n", data.Skills[i].Name)
+			}
 		}
-		// TODO: TAKE SKILLS DATA
-		fmt.Println(" [D] Keterampilan: ")
-		fmt.Println("	 [HELP] Jika anda masih melihat pesan ini, maka anda harus mengisi data pada menu aplikasi diawal!")
-		i = 0
-		for i < data.SkillCount {
-			// var skillName string = Capitalize(data.Skills[i].Name)
-			fmt.Printf("	 [V] %d. %s\n", i+1, Capitalize(data.Skills[i].Name))
-			i += 1
+
+		fmt.Println("\n------------------------------------------------------------------")
+
+		if data.EducationCount == 0 && data.ExperienceCount == 0 {
+			fmt.Println("Pendidikan:")
+			fmt.Println("  [!] Belum ada pendidikan")
+			fmt.Println("Pengalaman Kerja:")
+			fmt.Println("  [!] Belum ada pengalaman kerja")
+		} else if data.EducationCount == 0 {
+			fmt.Println("PENDIDIKAN:")
+			fmt.Println("  [!] Belum ada pendidikan")
+			fmt.Println("Pengalaman Kerja:")
+			for i = 0; i < data.ExperienceCount; i++ {
+				fmt.Printf("  - %s di %s\n", data.Experiences[i].Title, data.Experiences[i].Company)
+			}
+		} else if data.ExperienceCount == 0 {
+			fmt.Println("Pendidikan:")
+			for i = 0; i < data.EducationCount; i++ {
+				fmt.Printf("  - %s, %s (%d)\n", data.Educations[i].School, data.Educations[i].Degree, data.Educations[i].Year)
+			}
+			fmt.Println("Pengalaman Kerja:")
+			fmt.Println("  [!] Belum ada pengalaman kerja")
+		} else {
+			fmt.Printf("%-38s| %-38s\n", ">> Pendidikan: ", ">> Pengalaman Kerja: ")
+
+			var maxRows int
+			if data.EducationCount > data.ExperienceCount {
+				maxRows = data.EducationCount
+			} else {
+				maxRows = data.ExperienceCount
+			}
+
+			for i = 0; i < maxRows; i++ {
+				var eduStr string
+				var expStr string
+
+				if i < data.EducationCount {
+					eduStr = fmt.Sprintf("- %s, %s %d", data.Educations[i].School, data.Educations[i].Degree, data.Educations[i].Year)
+				}
+				if i < data.ExperienceCount {
+					expStr = fmt.Sprintf("- %s di %s", data.Experiences[i].Title, data.Experiences[i].Company)
+				}
+
+				fmt.Printf("%-38s| %-38s\n", eduStr, expStr)
+			}
 		}
-		// TODO: PENGALAMAN KERJA
-		fmt.Println(" [E] Pengalaman Kerja: ")
-		fmt.Println("	 [HELP] Jika anda masih melihat pesan ini, maka anda harus mengisi data pada menu aplikasi diawal!")
-		i = 0	
-		for i < data.ExperienceCount {
-			fmt.Printf("	[V] %d. %s %s\n", i+1, Capitalize(data.Experiences[i].Title), Capitalize(data.Experiences[i].Company))
-			i += 1
+
+		fmt.Println("\n------------------------------------------------------------------")
+		fmt.Println("Sertifikat:")
+		if sertifikat != "" {
+			fmt.Printf("  - %s\n", sertifikat)
+		} else {
+			fmt.Println("  [!] Tidak ada sertifikat")
 		}
-		// TODO: CERTIFICATION SEC
-		fmt.Println(" [F] Sertifikat: ", sertifikat)
-		endSec()
+
+		fmt.Printf("\n\n")
+		fmt.Println(">> Resume telah selesai dibuat. Semoga harimu menyenangkan ", nama)
+		fmt.Println()
+
+		//endSec()
 
 		//fmt.Println("TEST: ", aboutme)
 		// fmt.Println("[A] Informasi Pribadi: ")

@@ -31,11 +31,11 @@ func ManageExperience() {
 				SuggestionExperience()
 				fmt.Print("[>>] Job Title: ")
 				fmt.Scan(&title)
-				title = ToLower(title)
+				title = title
 
 				fmt.Print("[>>] Company Name: ")
 				fmt.Scan(&company)
-				company = ToLower(company)
+				company = company
 
 				newExperience.Title = title
 				newExperience.Company = company
@@ -54,7 +54,7 @@ func ManageExperience() {
 				fmt.Println("╠═══════╬════════════════════════╬════════════════════════╣")
 				i = 0
 				for i < data.ExperienceCount {
-					fmt.Printf("║  %-4d ║ %-22s ║ %-22s ║\n", i+1, Capitalize(data.Experiences[i].Title), Capitalize(data.Experiences[i].Company))
+					fmt.Printf("║  %-4d ║ %-22s ║ %-22s ║\n", i+1, data.Experiences[i].Title, data.Experiences[i].Company)
 					i += 1
 				}
 				fmt.Println("╚═══════╩════════════════════════╩════════════════════════╝")
@@ -67,11 +67,11 @@ func ManageExperience() {
 					SuggestionExperience()
 					fmt.Print("[>>] Job Title Baru: ")
 					fmt.Scan(&title)
-					title = ToLower(title)
+					title = title
 
 					fmt.Print("[>>] Company Name Baru: ")
 					fmt.Scan(&company)
-					company = ToLower(company)
+					company = company
 
 					data.Experiences[index-1].Title = title
 					data.Experiences[index-1].Company = company
@@ -88,7 +88,7 @@ func ManageExperience() {
 				fmt.Println("╠═══════╬════════════════════════╬════════════════════════╣")
 				i = 0
 				for i < data.ExperienceCount {
-					fmt.Printf("║  %-4d ║ %-22s ║ %-22s ║\n", i+1, Capitalize(data.Experiences[i].Title), Capitalize(data.Experiences[i].Company))
+					fmt.Printf("║  %-4d ║ %-22s ║ %-22s ║\n", i+1, data.Experiences[i].Title, data.Experiences[i].Company)
 					i += 1
 				}
 				fmt.Println("╚═══════╩════════════════════════╩════════════════════════╝")
@@ -102,7 +102,7 @@ func ManageExperience() {
 				fmt.Println("╠═══════╬════════════════════════╬════════════════════════╣")
 				i = 0
 				for i < data.ExperienceCount {
-					fmt.Printf("║  %-4d ║ %-22s ║ %-22s ║\n", i+1, Capitalize(data.Experiences[i].Title), Capitalize(data.Experiences[i].Company))
+					fmt.Printf("║  %-4d ║ %-22s ║ %-22s ║\n", i+1, data.Experiences[i].Title, data.Experiences[i].Company)
 					i += 1
 				}
 				fmt.Println("╚═══════╩════════════════════════╩════════════════════════╝")

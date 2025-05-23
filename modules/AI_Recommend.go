@@ -14,14 +14,14 @@ func RecommendJob() {
 	var name, title, school, degree, major, company string
 
 	fmt.Println("\n╔════════════════════════════════════════════════════╗")
-	fmt.Println("║                 AI CAREER SUGGESTION ENGINE        ║")
+	fmt.Println("║             AI CAREER SUGGESTION ENGINE            ║")
 	fmt.Println("╠════════════════════════════════════════════════════╣")
 	fmt.Println("║ [SYSTEM] Analyzing profile: Skills, Experience,    ║")
 	fmt.Println("║         and Education to generate recommendations  ║")
 	fmt.Println("╚════════════════════════════════════════════════════╝")
 
 	for i = 0; i < data.SkillCount; i++ {
-		name = ToLower(data.Skills[i].Name)
+		name = data.Skills[i].Name
 		
 		if name == "go" || name == "golang" || name == "backend" || name == "java" || name == "python" || name == "csharp" || name == "nodejs" || name == "restapi" || name == "spring" || name == "laravel" || name == "pengembang_backend" {
 			backend += 1
@@ -134,8 +134,8 @@ func RecommendJob() {
 	}
 
 	for i = 0; i < data.ExperienceCount; i++ {
-		title = ToLower(data.Experiences[i].Title)
-		company = ToLower(data.Experiences[i].Company)
+		title = data.Experiences[i].Title
+		company = data.Experiences[i].Company
 		if company == "telkom_indonesia" || company == "bukalapak" || company == "tokopedia" || company == "shopee" || company == "gojek" ||
 			company == "pertamina" || company == "bank_mandiri" || company == "bca" || company == "bni" || company == "indosat" || company == "xl" ||
 			company == "astra_international" || company == "unilever_indonesia" || company == "indomie" || company == "indofood" || company == "mayora" ||
@@ -264,9 +264,9 @@ func RecommendJob() {
 	}
 
 	for j = 0; j < data.EducationCount; j++ {
-		school = ToLower(data.Educations[j].School)
-		degree = ToLower(data.Educations[j].Degree)
-		major = ToLower(data.Educations[j].Major)
+		school = data.Educations[j].School
+		degree = data.Educations[j].Degree
+		major = data.Educations[j].Major
 
 		if school == "universitas_indonesia" || school == "ui" ||
 		school == "gadjah_mada_university" || school == "universitas_gadjah_mada" || school == "ugm" ||
